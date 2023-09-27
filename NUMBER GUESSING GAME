@@ -1,0 +1,54 @@
+/*
+NAME OF THE PROJECT : GUESS A NUMBER GAME
+PROGRAMMER          : PADALA VENKATA SAI VARUN KUMAR
+LANGUAGE            : C++ PROGRAMMING LANGUAGE                                   
+*/
+#include<iostream>
+#include<stdlib.h>
+#include<time.h>
+#include<random>
+using namespace std;
+int main()
+{
+    int newgame=1;
+    do{
+    cout<<"THE LOWER LIMIT IS 1"<<endl;
+    int n;
+    cout<<"ENTER THE UPPER LIMIT = ";
+    cin>>n;
+    cout<<"SO THE RANDOM NUMBER WILL BE IN BETWEEN 1 AND "<<n<<endl;
+    srand(time(NULL));
+    int randomnumber=(rand()%n)+1;
+    int guessed=0;
+    int i=1;
+    while(guessed!=randomnumber)
+    {
+            cout<<"GUESS THE RANDOM NUMBER GENERATED = ";
+            cin>>guessed;
+        if(guessed>randomnumber){
+            cout<<"THE GUESSED NUMBER IS GREATER THAN THE RANDOM GENERATED NUMBER"<<endl;
+            i++;
+        }
+        else if(guessed<randomnumber){
+            cout<<"THE GUESSED NUMBER IS LESSER THAN THE RANDOM GENERATED NUMBER"<<endl;
+            i++;
+        }
+        else if(guessed==randomnumber){
+            cout<<"YOU HAVE GUESSED THE CORRECT NUMBER AND TOOK "<<i<<" CHANCES TO FIND CORRECT NUMBER"<<endl;
+        }
+    }
+    cout<<"DO YOU WANT TO PLAY THE GAME AGAIN?\n IF YOU WANT TO PLAY AGAIN ENTER 1\n IF YOU WANT TO DISCONTINUE THE GAME ENTER 0 = "<<endl;
+    cin>>newgame;
+    if(newgame==0){
+        break;
+    }
+    else if(newgame!=1&&newgame!=0){
+        cout<<"YOU HAVE ENTERED WRONG NUMBER"<<endl;
+        break;
+    }
+    else if(newgame==1){
+        continue;
+    }
+    }while(newgame==1);
+    cout<<"GAME HAS BEEN ENDED..... THANKS FOR PLAYING......";
+}
