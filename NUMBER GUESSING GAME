@@ -16,7 +16,7 @@ int main()
     int n;
     cout<<"ENTER THE UPPER LIMIT = ";
     cin>>n;
-    cout<<"SO THE RANDOM NUMBER WILL BE IN BETWEEN 1 AND "<<n<<endl;
+ cout<<"SO THE RANDOM NUMBER WILL BE IN BETWEEN 1 AND "<<n<<endl;
     srand(time(NULL));
     int randomnumber=(rand()%n)+1;
     int guessed=0;
