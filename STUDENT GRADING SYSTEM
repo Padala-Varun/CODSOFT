@@ -1,0 +1,52 @@
+/*
+NAME OF THE PROJECT : STUDENT GRADING SYSTEM
+PROGRAMMER          : PADALA VENKATA SAI VARUN KUMAR
+LANGUAGE            : C++ PROGRAMMING LANGUAGE                  
+*/
+#include<iostream>
+#include<bits/stdc++.h>
+using namespace std;
+int main(){
+    string name;
+    int marks=0,newname=1,count=0,max=0,least=0,present=0;
+    float average=0;
+    do{
+        count++;
+        cout<<"ENTER THE NAME OF THE STUDENT="<<endl;
+        cin>>name;
+        cout<<"ENTER THE MARKS OF "<<name<<"="<<endl;
+        cin>>marks;
+        average=(average+marks)/count;
+        if(count==1)
+        {
+            max=marks;
+            least=marks;
+        }
+        else if(count!=1)
+        {
+           if(marks<least)
+           least=marks;
+           else if(marks>max)
+           max=marks;
+        }
+        cout<<"DO YOU WANT TO ADD ANOTHER NAME?\n IF YOU WANT TO ADD ANOTHER NAME ENTER 1\n IF YOU DON'T WANT TO ADD ANOTHER NAME ENTER 0 = "<<endl;
+    cin>>newname;
+    if(newname==0){
+        break;
+    }
+    else if(newname!=1&&newname!=0){
+        cout<<"YOU HAVE ENTERED WRONG NUMBER"<<endl;
+        break;
+    }
+    else if(newname==1){
+        continue;
+    }
+    }while(newname==1);  
+    cout<<"***********************************************"<<endl;
+    cout<<"THE AVERAGE MARKS ARE = "<<average<<endl;
+    cout<<"THE HIGHEST MARKS ARE = "<<max<<endl;
+    cout<<"THE LEAST MARKS ARE = "<<least<<endl;
+    cout<<"***********************************************"<<endl;
+    cout<<"THANKS FOR USING OUR MARKS GRADING SYSTEM..... "<<endl;
+    cout<<"***********************************************"<<endl;
+}
