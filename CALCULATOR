@@ -1,0 +1,69 @@
+/*
+NAME OF THE PROJECT : ROCK PAPER SCISSOR GAME
+PROGRAMMER          : PADALA VENKATA SAI VARUN KUMAR
+LANGUAGE            : C++ PROGRAMMING LANGUAGE                  
+*/
+#include<iostream>
+#include<bits/stdc++.h>
+using namespace std;
+class calculator{
+    public:
+    int addition(int before,int newnum){
+        return before+newnum;
+    }
+    int subtraction(int before,int newnum){
+        return before-newnum;
+    }
+    int multiplication(int before,int newnum){
+        return before*newnum;
+    }
+     int division(int before,int newnum){
+        return before/newnum;
+    }
+};
+int main(){
+    cout<<"---------------------------------------------------------------------"<<endl;
+    cout<<"PLEASE NOTE THAT WE CAN PERFORM ANY OPERATION ON ANY NUMBER OF INPUTS."<<endl<<"EXAMPLE: 2+3-4*5/3"<<endl;
+    cout<<"---------------------------------------------------------------------"<<endl;
+    calculator cal;//object creation
+    int newnumber=0;
+    int result=0,select=0;
+    do{
+        cout<<"ENTER NEXT NUMBER="<<endl;
+        cin>>newnumber;
+      cout<<"\nIF YOU WANT TO PERFORM ADDITION ENTER 1\nIF YOU WANT TO PERFORM SUBTRACTION ENTER 2\nIF YOU WANT TO PERFORM MULTIPLICATION ENTER 3\nIF YOU WANT TO PERFORM DIVISION ENTER 4\n"<<endl;
+      cin>>select;
+      if(select==1)
+      {
+          result=cal.addition(result,newnumber);
+      }
+      else if(select==2)
+      {
+          result=cal.subtraction(result,newnumber);
+      }
+      else if(select==3)
+      {
+          result=cal.multiplication(result,newnumber);
+      }
+      else if(select==4)
+      {
+          result=cal.division(result,newnumber);
+      }
+      
+      
+      cout<<"DO YOU WANT TO ADD ANOTHER NUMBER?\n IF YOU WANT TO ADD ANOTHER NUMBER ENTER 1\n IF YOU DON'T WANT TO ADD ANOTHER NUMBER ENTER 0 = "<<endl;
+    cin>>newnumber;
+    if(newnumber==0){
+        break;
+    }
+    else if(newnumber!=1&&newnumber!=0){
+        cout<<"YOU HAVE ENTERED WRONG NUMBER"<<endl;
+        break;
+    }
+    else if(newnumber==1){
+        continue;
+    }
+    }while(newnumber==1);  
+    cout<<"*****THE RESULT IS="<<result<<"*****"<<endl;
+    cout<<"THANKS FOR USING OUR CALCULATOR..... ";
+}
